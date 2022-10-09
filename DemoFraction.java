@@ -14,6 +14,7 @@ public class DemoFraction
 		   System.out.println("Enter 1 for reducing the fraction");
 		   System.out.println("Enter 2 for Adding the fraction");
 		   System.out.println("Enter 3 for Multiplying the fraction");
+		   System.out.println("Enter 4 for Subtraction the fraction");
 		   System.out.println("Enter 0 for exit");
 		   choice=myObj.next().charAt(0);
 		   if(choice=='1')
@@ -68,6 +69,35 @@ public class DemoFraction
 			   System.out.println("The multiplication of the fractions is : ");
 			   Fmul.display();
 		   }
+		    else if(choice=='4')
+		   {
+			   Fraction Fsubtract=new Fraction();
+			   System.out.println("Enter the number of fractions that you want to subtract");
+			   number=myObj.nextInt();
+			   Fraction[] fraction=new Fraction[number];
+			   for(int i=0;i<number;i++)
+			   {
+				   fraction[i]=new Fraction();
+				   fraction[i].get();
+				   System.out.println("********Fraction number"+(i+1)+"********");
+				   fraction[i].display();
+			   }
+			   Fsubtract=fraction[0];
+			   for(int i=1;i<number;i++)
+			   {
+				  Fsubtract= Fsubtract.subtract(fraction[i]);
+			   }
+			   System.out.println("The subtract of the fractions is : ");
+			   Fsubtract.display();
+		   }
+		   else if(choice=='0')
+		   {
+		           System.out.println("Thank you for using this program");
+		   }
+		   else 
+		   {
+		           System.out.println("Enter the right choice please");
+		   }	   
 		   
 	   }while(choice!='0');
    }
