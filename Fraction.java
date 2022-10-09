@@ -81,4 +81,14 @@ public class Fraction {
 		Fmul.reduce();
 		return Fmul;
 	}
+	Fraction subtract(Fraction F)
+	{
+		Fraction Fsubtract=new Fraction();
+		Fsubtract.denumerator=denumerator*F.denumerator;
+		F.numerator*=(Fsubtract.denumerator/F.denumerator);
+		numerator*=(Fsubtract.denumerator/denumerator);
+		Fsubtract.numerator=numerator-F.numerator;
+		Fsubtract.reduce();
+		return Fsubtract;
+	}
 }
